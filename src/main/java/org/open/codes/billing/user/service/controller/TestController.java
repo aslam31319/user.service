@@ -29,7 +29,7 @@ public class TestController {
     Mono<String> getRoles(Principal principal) {
         JwtAuthenticationToken jwtAuthToken = (JwtAuthenticationToken) principal;
         Jwt jwtPrincipal = (Jwt) jwtAuthToken.getPrincipal();
-        return Mono.just(jwtPrincipal.getClaims().toString());
+        return Mono.just(jwtAuthToken.getAuthorities().toString());
     }
 
 
