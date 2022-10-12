@@ -25,7 +25,6 @@ public class TestController {
     @PreAuthorize("hasRole('user_read')")
     Mono<String> getRoles(Principal principal) {
         JwtAuthenticationToken jwtAuthToken = (JwtAuthenticationToken) principal;
-        Jwt jwtPrincipal = (Jwt) jwtAuthToken.getPrincipal();
         return Mono.just(jwtAuthToken.getAuthorities().toString());
     }
 
