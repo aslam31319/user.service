@@ -10,9 +10,11 @@ eureka:
       defaultZone: http://127.0.0.1:8086/eureka
 
 spring:
+  application:
+    name: user-service
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9000/realms/pos
-          jwk-set-uri: http://localhost:9000/realms/pos/protocol/openid-connect/certs
+          issuer-uri: http://localhost:9001/realms/pos
+          jwk-set-uri: http://localhost:9001/realms/pos/protocol/openid-connect/certs
